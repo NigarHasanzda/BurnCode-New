@@ -1,2 +1,5 @@
 @import "tailwindcss";
 
+.faq_bg{
+    background-image: url(/public/faqbg.png);
+}

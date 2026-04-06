@@ -26,14 +26,14 @@ const ServiceCard = ({ title, description, icon, features }: ServiceCardProps) =
         <h3 className={`${poppins.className} text-[#1D164D] text-[20px] font-semibold leading-tight tracking-tight`}>
           {title}
         </h3>
-        <p className="text-[#6F6C90] text-[15px] leading-[1.6] font-normal opacity-90">
+        <p className="text-[#6F6C90] text-[16px] leading-[1.6] font-regular opacity-90">
           {description}
         </p>
       </div>
 
       <ul className="flex flex-col gap-3 mt-auto ">
         {features.map((feature, idx) => (
-          <li key={idx} className="flex items-center gap-3 text-[#596063] text-[15px] font-[400] opacity-80">
+          <li key={idx} className="flex items-center gap-3 text-[#596063] text-[16px] font-regular opacity-80">
             <span className="w-2 h-2 rounded-full bg-[#4f27ff]"></span>
             {feature}
           </li>

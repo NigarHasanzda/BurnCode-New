@@ -63,7 +63,6 @@ const BlogSection = () => {
           Bloq
         </h2>
 
-        {/* Grid sistemi: Mobildə 1, Tabletdə 2, Desktopda 3 sütun */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogData.map((blog, index) => (
             <BlogCard 

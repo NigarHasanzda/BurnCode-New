@@ -15,9 +15,9 @@ const WhyChooseUs = () => {
             <div className="max-w-[1430px] mx-auto">
 
                 <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-[#1D164D] text-[30px] md:text-[48px] font-semibold leading-tight">
+                    <h2 className="text-[#170F49] text-[30px] md:text-[48px] font-semibold leading-tight">
                         Niyə şirkətlər <br className="hidden md:block" />
-                        <span className="text-[#6344F5]">Burncode</span>-u seçir?
+                        <span className="text-[#6045FD]">Burncode</span>-u seçir?
                     </h2>
                 </div>
 

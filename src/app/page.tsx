@@ -1,4 +1,5 @@
 import BlogSection from "@/components/Sections/Home/Blog";
+import FaqSection from "@/components/Sections/Home/FAQ";
 import Hero from "@/components/Sections/Home/Hero";
 import LastProjects from "@/components/Sections/Home/LastProjects";
 import Projects from "@/components/Sections/Home/Projects";
@@ -15,6 +16,7 @@ export default function Home() {
     <Services/>
     <LastProjects/>
     <BlogSection/>
+    <FaqSection/>
     {/* <Projects/> */}
     </>
   );

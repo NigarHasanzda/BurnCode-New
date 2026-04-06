@@ -16,14 +16,12 @@ const Hero = () => {
         <section className={`${poppins.className} bg-white min-h-[800px] flex items-center py-10 md:py-0`}>
             <div className='w-[90%] md:w-[80%] mx-auto px-6 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center'>
                 
-                {/* SOL TƏRƏF: Content */}
-                {/* items-center (mobildə mərkəz), lg:items-start (desktopda sol) */}
                 <div className='flex flex-col items-center lg:items-start text-center lg:text-left gap-10 z-10'>
                     <div className='space-y-6'>
                         <h1 className='text-[40px] md:text-[64px] font-semibold text-[#1D164D] leading-[1.1] tracking-tight'>
                             Biznesinizi virtual <br className='hidden md:block' /> dünyaya daşıyın
                         </h1>
-                        <p className='text-[16px] md:text-[18px] text-[#596063] max-w-[640px] leading-relaxed opacity-80'>
+                        <p className={`text-[16px] md:text-[18px] text-[#596063] font-regular max-w-[640px] leading-relaxed opacity-80 ${poppins.className}`}>
                             Burncode şirkəti artıq 5 ildən çoxdur ki, müştərilərinə xidmət göstərir. 
                             Bu müddət ərzində bir sıra kiçik və böyük layihələr həyata keçirmişik. 
                             Sizə həm keyfiyyətli iş, həm də münasib qiymət təklif edirik.
@@ -35,10 +33,10 @@ const Hero = () => {
                         <Button
                             text="Bizimlə əlaqə"
                             path="/contact"
-                            className="px-8 py-4 text-[16px] font-bold"
+                            className="px-8 py-4 text-[16px] font-medium"
                         />
                         
-                        <button className='bg-white border border-gray-200 text-[#1D164D] px-8 py-4 rounded-full font-bold text-[16px] hover:bg-gray-50 transition-all active:scale-95'>
+                        <button className='bg-white border border-gray-200 text-[#1D164D] px-8 py-4 rounded-full font-medium text-[16px] hover:bg-gray-50 transition-all active:scale-95'>
                             Xidmətlərə bax
                         </button>
                     </div>
@@ -48,16 +46,16 @@ const Hero = () => {
                     {/* Statistika: Mobildə mərkəz üçün gap nizamlandı */}
                     <div className='flex flex-wrap justify-center lg:justify-start items-center gap-8 md:gap-16'>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-black text-[#6344F5] leading-none'>54+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-medium'>Tamamlanmış layihə</span>
+                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>54+</span>
+                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>Tamamlanmış layihə</span>
                         </div>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-black text-[#6344F5] leading-none'>26+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-medium'>Məmnun müştəri</span>
+                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>26+</span>
+                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>Məmnun müştəri</span>
                         </div>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-black text-[#6344F5] leading-none'>5+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-medium'>İllik təcrübə</span>
+                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>5+</span>
+                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>İllik təcrübə</span>
                         </div>
                     </div>
                 </div>
