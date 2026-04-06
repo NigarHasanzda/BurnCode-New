@@ -1,63 +1,110 @@
-import ServiceCard from '@/components/Cards/ServicesCard'
-import { Poppins } from 'next/font/google'
+"use client"
 import React from 'react'
-
-
+import { Poppins } from 'next/font/google'
+import { MoveUpRight } from 'lucide-react'
+import ServiceCard from '@/components/Cards/ServicesCard'
+import Button from '@/components/Button/Button'
 
 const poppins = Poppins({
     subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
+    weight: ['400', '500', '600', '700', '800'],
     display: 'swap',
 })
 
 const servicesData = [
   {
-    title: "Web proqramlaşdırma",
-    description: "Dinamik veb proqramlarımızla internetin gələcəyini yaşayın. Ehtiyaclarınıza uyğun olaraq, onlar məşğulluğu və məhsuldarlığı artırır."
+    title: "Veb Sayt Hazırlanması",
+    description: "Müasir CEO dostu veb saytlar. Korporativ saytlar, e-ticarət platformaları.",
+    features: ["Responsiv dizayn", "CEO optimallaşdırma", "CMS İnteqrasiya"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+    )
   },
   {
-    title: "Mobil proqramlaşdırma",
-    description: "Mobil tətbiqetmə təcrübəmizlə biznesinizi gücləndirin. Biz yolda inkişaf etmiş əlaqə və səmərəlilik üçün uyğunlaşdırılmış həllər yaradırıq."
+    title: "Mobil Tətbiqlər",
+    description: "iOS və Android platformaları üçün yüksək performanslı mobil tətbiqlər hazırlayırıq.",
+    features: ["iOS & Android", "Cross-platform", "UI/UX Dizayn"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+      </svg>
+    )
   },
   {
-    title: "Masaüstü proqram təminatı hazırlanması",
-    description: "Biz sizin unikal ehtiyaclarınıza uyğun gələn fərdi masa üstü proqramlar hazırlayırıq. Komandamız konsepsiyaları səmərəli."
+    title: "Masaüstü proqram təminatı",
+    description: "Biz sizin unikal ehtiyaclarınıza uyğun gələn fərdi masa üstü proqramlar hazırlayırıq.",
+    features: ["Windows & MacOS", "Yüksək təhlükəsizlik", "Offline işləmə"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+      </svg>
+    )
   },
   {
     title: "Mikroçip proqramlaşdırma",
-    description: "Mikroçip Proqramlaşdırma smartfonlardan tutmuş sənaye maşınlarına qədər gündəlik cihazların əsasını təşkil edən sistemlər üçün ixtisaslaşdırılmış proqram təminatıdır."
+    description: "Smartfonlardan tutmuş sənaye maşınlarına qədər cihazların proqram təminatı.",
+    features: ["Embedded systems", "IoT həlləri", "Aşağı enerji sərfi"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/>
+      </svg>
+    )
   },
   {
     title: "QA avtomatlaşdırılması",
-    description: "QA avtomatlaşdırılması proqram təminatını sınaqdan keçirmək və onun keyfiyyətini və etibarlılığını təmin etmək üçün avtomatlaşdırılmış."
+    description: "Proqram təminatını sınaqdan keçirmək üçün avtomatlaşdırılmış test sistemləri.",
+    features: ["Unit testing", "Automation tools", "Bug tracking"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    )
   },
   {
     title: "Data analitika",
-    description: "Məlumat analitikası qərar qəbul etmək üçün dəyərli fikirlər əldə etmək üçün məlumatların təhlili prosesidir."
+    description: "Məlumatların təhlili prosesi ilə biznesiniz üçün dəyərli qərarlar verin.",
+    features: ["Big Data", "Visual reports", "Predictive models"],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+    )
   }
 ]
 
 const Services = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-[1490px] mx-auto px-6">
+    <section className={`${poppins.className} py-24 bg-white`}>
+      <div className="max-w-[1530px] mx-auto px-6 md:px-12">
 
-        <h2 className={`${poppins.className} text-[#170F49] text-[36px] md:text-[48px] font-semibold leading-[-1.2px] text-center mb-16`}>
+        <h2 className="text-[#1D164D] text-[36px] md:text-[56px] font-bold text-center mb-20 tracking-tight">
           Xidmətlərimiz
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {servicesData.map((service, index) => (
             <ServiceCard 
               key={index}
               title={service.title}
               description={service.description}
+              features={service.features}
+              icon={service.icon}
             />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-20">
+         <Button
+            text="Bütün xidmətlər"
+            path="/services"
+            className="px-10 py-5 text-[16px] font-bold"
+          />
         </div>
       </div>
     </section>
   )
 }
 
-export default Services
+export default Services;

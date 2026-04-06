@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Logo from '../Logo/Logo'
-import { Menu, X } from 'lucide-react'
-import Button from '../Button/Button'
+import { Menu, MoveUpRight, X } from 'lucide-react'
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,11 +35,10 @@ const Header = () => {
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
-          <Button
-            text="Bizimlə əlaqə"
-            className="px-4 py-2 text-[16px]"
-          />
+        <div className="flex justify-center ">
+          <button className="bg-[#6344F5] hover:bg-[#4F35C9] text-white px-5 py-2 rounded-full font-medium text-[15px] flex items-center gap-2 transition-all shadow-xl shadow-indigo-100 active:scale-95">
+            İdarə paneli 
+          </button>
         </div>
 
 

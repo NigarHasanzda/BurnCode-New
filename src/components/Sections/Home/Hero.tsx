@@ -2,6 +2,7 @@
 import React from 'react'
 import { Poppins } from 'next/font/google'
 import { MoveUpRight } from 'lucide-react'
+import Button from '@/components/Button/Button'
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -31,9 +32,11 @@ const Hero = () => {
 
                     {/* Düymələr: Mobildə mərkəzləşdirildi */}
                     <div className='flex flex-wrap justify-center lg:justify-start gap-4 items-center'>
-                        <button className='bg-[#6344F5] hover:bg-[#4F35C9] text-white px-8 py-4 rounded-full font-bold text-[16px] flex items-center gap-2 transition-all shadow-lg shadow-indigo-100 active:scale-95'>
-                            Bizimlə əlaqə <MoveUpRight size={18} />
-                        </button>
+                        <Button
+                            text="Bizimlə əlaqə"
+                            path="/contact"
+                            className="px-8 py-4 text-[16px] font-bold"
+                        />
                         
                         <button className='bg-white border border-gray-200 text-[#1D164D] px-8 py-4 rounded-full font-bold text-[16px] hover:bg-gray-50 transition-all active:scale-95'>
                             Xidmətlərə bax

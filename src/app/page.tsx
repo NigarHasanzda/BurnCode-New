@@ -1,4 +1,5 @@
 import Hero from "@/components/Sections/Home/Hero";
+import LastProjects from "@/components/Sections/Home/LastProjects";
 import Projects from "@/components/Sections/Home/Projects";
 import Services from "@/components/Sections/Home/Services";
 import WhyChooseUs from "@/components/Sections/Home/WhyChoose";
@@ -10,8 +11,10 @@ export default function Home() {
     <>
     <Hero/>
     <WhyChooseUs/>
-    <Projects/>
     <Services/>
+    <LastProjects/>
+    
+    {/* <Projects/> */}
     </>
   );
 }
