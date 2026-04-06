@@ -50,7 +50,7 @@ const Projects = () => {
         {/* Kart Konteyneri */}
         <div className="bg-[#F9F9FF] rounded-[30px] md:rounded-[40px] p-6 md:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-12 min-h-fit lg:min-h-[500px]">
           
-          {/* Şəkil - Mobildə yuxarıda görünməsi üçün order-first istifadə olundu */}
+          
           <div className="flex-1 w-full order-first lg:order-last">
             <div className="relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-xl md:shadow-2xl">
               <img 
