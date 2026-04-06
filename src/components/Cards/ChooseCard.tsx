@@ -1,18 +1,31 @@
-interface FeatureCardProps {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-  className?: string;
+import React from 'react'
+
+
+
+type ChooseCardProps = {
+  title: string
+  description: string
+  children: React.ReactNode
+  className?: string
 }
 
-const ChooseCard = ({ title, description, children, className = "" }: FeatureCardProps) => (
-  <div className={`bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-sm flex flex-col h-full hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-500 ${className}`}>
-    <div className="bg-[#F8FAFC] rounded-3xl h-48 mb-8 flex items-center justify-center p-6 overflow-hidden">
-      {children}
+const ChooseCard = ({ title, description, children, className = "" }: ChooseCardProps) => {
+  return (
+    <div className={`bg-white rounded-[32px] overflow-hidden flex flex-col border border-gray-100 shadow-sm transition-all hover:shadow-md ${className}`}>
+      <div className="h-[190px] flex items-center justify-center  ">
+        {children}
+      </div>
+      
+      <div className="p-8 md:p-10 flex-grow">
+        <h3 className="text-[#1D164D] text-[16px] md:text-[20px] font-bold mb-4 leading-tight">
+          {title}
+        </h3>
+        <p className="text-[#596063] text-[14px] md:text-[16px] leading-relaxed opacity-90">
+          {description}
+        </p>
+      </div>
     </div>
-    <div className="space-y-4">
-      <h3 className="text-xl font-bold text-[#1D165C] tracking-tight">{title}</h3>
-      <p className="text-slate-500 leading-relaxed text-sm font-medium">{description}</p>
-    </div>
-  </div>
-);
+  )
+}
+
+export default ChooseCard
