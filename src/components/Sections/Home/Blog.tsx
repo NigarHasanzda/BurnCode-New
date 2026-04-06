@@ -18,14 +18,35 @@ const blogData = [
     path: "/blog/reqemsal-transformasiya"
   },
   {
-    image: "/blog2.jpg",
+    image: "/blog1.jpg",
     title: "Süni İntellekt Trendləri",
     description: "2026-cı ildə AI dünyasında bizi nələr gözləyir? Ən son yeniliklər və biznesə təsirləri haqqında ətraflı.",
     date: "12 MART 2026",
     path: "/blog/ai-trendleri"
   },
   {
-    image: "/blog3.jpg",
+    image: "/blog1.jpg",
+    title: "Kibertəhlükəsizlik",
+    description: "Məlumatlarınızı qorumaq üçün ən effektiv üsullar. Müasir dövrün ən böyük təhdidlərinə qarşı hazır olun.",
+    date: "15 MART 2026",
+    path: "/blog/kibertehlukesizlik"
+  },
+    {
+    image: "/blog1.jpg",
+    title: "Rəqəmsal Transformasiya",
+    description: "Biznesinizi müasir texnologiyalarla gücləndirin və rəqabətdə bir addım öndə olun. Rəqəmsallaşma gələcəyin açarıdır.",
+    date: "8 MART 2026",
+    path: "/blog/reqemsal-transformasiya"
+  },
+  {
+    image: "/blog1.jpg",
+    title: "Süni İntellekt Trendləri",
+    description: "2026-cı ildə AI dünyasında bizi nələr gözləyir? Ən son yeniliklər və biznesə təsirləri haqqında ətraflı.",
+    date: "12 MART 2026",
+    path: "/blog/ai-trendleri"
+  },
+  {
+    image: "/blog1.jpg",
     title: "Kibertəhlükəsizlik",
     description: "Məlumatlarınızı qorumaq üçün ən effektiv üsullar. Müasir dövrün ən böyük təhdidlərinə qarşı hazır olun.",
     date: "15 MART 2026",
@@ -36,9 +57,9 @@ const blogData = [
 const BlogSection = () => {
   return (
     <section className={`${poppins.className} py-24 bg-white`}>
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+      <div className="max-w-[1530px] mx-auto px-6 md:px-12">
         
-        <h2 className="text-[#1D164D] text-[40px] md:text-[56px] font-bold text-center mb-16 tracking-tight">
+        <h2 className={`text-[#1D164D] text-[35px] md:text-[48px] font-semibold text-center mb-16 tracking-tight  ${poppins.className}`}>
           Bloq
         </h2>
 
