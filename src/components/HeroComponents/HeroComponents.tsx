@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Poppins } from 'next/font/google';
 import Link from 'next/link';
@@ -36,7 +37,6 @@ const HeroComponent = ({
         </span>
       </div>
 
-      {/* Main Title - Mobildə text ölçüsü və leading (sətirarası) tənzimləndi */}
       <h1 className="text-[#1D164D] text-[32px] sm:text-[40px] md:text-[68px] font-semibold leading-[1.2] md:leading-[78px] tracking-tight mb-4 md:mb-6 max-w-[900px]">
         {titleNormal} <span className="text-[#7C5CFC]">{titleColored}</span>
       </h1>
