@@ -56,7 +56,7 @@ const blogData = [
 
 const BlogSection = () => {
   return (
-    <section className={`${poppins.className} py-24 bg-white`}>
+    <section className={`${poppins.className} py-24 `}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
         
         <h2 className={`text-[#1D164D] text-[35px] md:text-[48px] font-semibold text-center mb-16 tracking-tight  ${poppins.className}`}>

@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 const WhyChooseUs = () => {
     return (
-        <section className={`${poppins.className} bg-white py-12 md:py-20 px-6 md:px-12`}>
+        <section className={`${poppins.className}  py-12 md:py-20 px-6 md:px-12`}>
             <div className="max-w-[1430px] mx-auto">
 
                 <div className="text-center mb-12 md:mb-16">

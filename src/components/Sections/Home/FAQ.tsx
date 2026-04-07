@@ -31,7 +31,7 @@ const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className={`${poppins.className} py-24 bg-white`}>
+    <section className={`${poppins.className} py-24 `}>
       <div className="max-w-[1530px] mx-auto px-6">
         
         <div className={`text-center mb-16 ${poppins.className}`}>
@@ -53,29 +53,7 @@ const FaqSection = () => {
           ))}
         </div>
 
-        <div className="relative w-full rounded-[40px] p-10 md:p-20 text-center overflow-hidden group">
-          <img 
-            src="/faqbg.png" 
-            alt="Faq Background"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 "
-          />
-          <div className="absolute inset-0 opacity-40 pointer-events-none bg-[radial-gradient(circle_at_top_right,_#8E86FF,_transparent_60%)]"></div>
-          
-          <div className="relative z-10 flex flex-col items-center gap-6">
-            <h3 className={`text-white text-[30px] md:text-[48px] font-bold leading-tight ${poppins.className}`}>
-              Hələ də sualınız var?
-            </h3>
-            <p className={`text-[#f8f8ffb2] text-[16px] md:text-[18px] max-w-[650px] leading-relaxed opacity-90 ${poppins.className}`}>
-              Əgər axtardığınızı tapa bilmədinizsə, dəstək komandamız 24/7 sizə kömək etməyə hazırdır. Bizimlə əlaqə saxlamaqdan çəkinməyin!
-            </p>
-            
-            <div className="mt-6">
-              <button className={`!bg-white/10 border-none rounded-full text-[18px] font-medium text-white px-12 py-5 transition-all hover:bg-white/20 backdrop-blur-md ${poppins.className}`}>
-                Bizimlə Əlaqə
-              </button>
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </section>

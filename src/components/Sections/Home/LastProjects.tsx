@@ -39,7 +39,7 @@ const projectsData = [
 
 const LastProjects = () => {
   return (
-    <section className={`${poppins.className} py-24 bg-white`}>
+    <section className={`${poppins.className} py-24 `}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
 
         <div className="text-center mb-20">

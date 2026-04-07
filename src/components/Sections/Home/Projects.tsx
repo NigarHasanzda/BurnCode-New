@@ -41,7 +41,7 @@ const Projects = () => {
   const currentProject = projectsData[currentIndex]
 
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 ">
       <div className="max-w-[1490px] mx-auto px-4 md:px-6">
         <h2 className={`${poppins.className} text-[#170F49] text-[32px] md:text-[48px] font-semibold text-center mb-10 md:mb-16`}>
           Layihələrimiz

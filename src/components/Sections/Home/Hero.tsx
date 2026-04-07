@@ -13,7 +13,7 @@ const poppins = Poppins({
 const Hero = () => {
     return (
         // Bütün bölməyə Poppins tətbiq edildi
-        <section className={`${poppins.className} bg-white min-h-[800px] flex items-center py-10 md:py-0`}>
+        <section className={`${poppins.className}  min-h-[800px] flex items-center py-10 md:py-0`}>
             <div className='w-[90%] md:w-[80%] mx-auto px-6 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center'>
                 
                 <div className='flex flex-col items-center lg:items-start text-center lg:text-left gap-10 z-10'>

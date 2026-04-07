@@ -3,3 +3,7 @@
 .faq_bg{
     background-image: url(/public/faqbg.png);
 }
+
+body{
+    background-color: #F8F9FB !important;
+}
