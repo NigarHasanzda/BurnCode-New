@@ -1,121 +1,104 @@
 "use client"
-import React, { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import Button from '@/components/Button/Button'
-import { Poppins } from 'next/font/google'
+import React from 'react';
+import { Poppins } from 'next/font/google';
+import BlogCard from '@/components/Cards/BlogCard';
+import ProjectCard from '@/components/Cards/ProjectCard';
+import Button from '@/components/Button/Button';
 
 const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-    display: 'swap',
-})
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+});
 
-const projectsData = [
+const blogData = [
   {
-    id: 1,
+    image: "/blog1.jpg",
     title: "NRICH Dashboard",
-    category: "Dashboard",
-    description: "Burncode şirkəti artıq 5 ildən çoxdur ki, müştərilərinə xidmət göstərir. Bu müddət ərzində bir sıra kiçik və böyük layihələr həyata keçirmişik. Sizə həm keyfiyyətli iş, həm də münasib qiymət təklif edirik.",
-    image: "/projects.png" 
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
   },
   {
-    id: 2,
-    title: "Kord AI Platform",
-    category: "AI Solution",
-    description: "Süni intellekt əsaslı vakansiya və təcrübə proqramları platforması. İstifadəçilərin bacarıqlarını analiz edərək ən uyğun işləri təklif edir.",
-    image: "/projects.png"
-  }
-]
+    image: "/blog1.jpg",
+    title: "NRICH Dashboard",
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
+  },
+  {
+    image: "/blog1.jpg",
+    title: "NRICH Dashboard",
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
+  },
+  {
+    image: "/blog1.jpg",
+    title: "NRICH Dashboard",
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
+  },
+  {
+    image: "/blog1.jpg",
+    title: "NRICH Dashboard",
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
+  },
+  {
+    image: "/blog1.jpg",
+    title: "NRICH Dashboard",
+    category: "Veb inkişaf",
+    technologies: ["Next.js", "Node.js"],
+    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+    date: "8 MART 2026",
+    path: "/blog/nrich-dashboard"
+  },
 
-const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === projectsData.length - 1 ? 0 : prev + 1))
-  }
+  // Digər datalar da eyni formatda...
+];
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? projectsData.length - 1 : prev - 1))
-  }
-
-  const currentProject = projectsData[currentIndex]
-
+const ProjectSection = () => {
   return (
-    <section className="py-12 md:py-20 ">
-      <div className="max-w-[1490px] mx-auto px-4 md:px-6">
-        <h2 className={`${poppins.className} text-[#170F49] text-[32px] md:text-[48px] font-semibold text-center mb-10 md:mb-16`}>
-          Layihələrimiz
+    <section className={`${poppins.className} py-18 bg-[#F8F9FB]`}>
+      <div className="max-w-[1530px] mx-auto px-6 md:px-12">
+
+        <h2 className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight">
+          Son Layihələrimiz
         </h2>
 
-        {/* Kart Konteyneri */}
-        <div className="bg-[#F9F9FF] rounded-[30px] md:rounded-[40px] p-6 md:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-12 min-h-fit lg:min-h-[500px]">
-          
-          
-          <div className="flex-1 w-full order-first lg:order-last">
-            <div className="relative rounded-[20px] md:rounded-[30px] overflow-hidden shadow-xl md:shadow-2xl">
-              <img 
-                src={currentProject.image} 
-                alt={currentProject.title}
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </div>
-
-          {/* Mətn hissəsi */}
-          <div className="flex-1 space-y-4 md:space-y-6 text-center lg:text-left">
-            <h3 className="text-[#4A3AFF] text-[32px] md:text-[48px] lg:text-[64px] font-bold leading-tight">
-              {currentProject.title}
-            </h3>
-            
-            <div className="inline-block px-6 py-2 border border-[#4A3AFF] text-[#4A3AFF] rounded-full text-sm font-medium">
-              {currentProject.category}
-            </div>
-
-            <p className="text-[#6F6C90] text-[16px] md:text-[18px] leading-relaxed max-w-[500px] mx-auto lg:mx-0">
-              {currentProject.description}
-            </p>
-
-            <div className="pt-4">
-                <Button 
-                text="Layihəyə bax" 
-                className="px-8 md:px-10 py-3 md:py-4 text-[16px] w-full sm:w-auto" 
-                />
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {blogData.map((blog, index) => (
+            <ProjectCard
+              key={index}
+              {...blog} // Bütün propları birbaşa ötürürük
+            />
+          ))}
         </div>
 
-        {/* Naviqasiya */}
-        <div className="flex items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12">
-          <button 
-            onClick={prevSlide}
-            className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] rounded-full border border-[#D1D1D1] flex items-center justify-center text-[#4A3AFF] hover:bg-[#4A3AFF] hover:text-white transition-all active:scale-95"
-            aria-label="Previous project"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <div className="flex gap-2">
-            {projectsData.map((_, index) => (
-              <div 
-                key={index}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'w-8 bg-[#4A3AFF]' : 'w-2.5 bg-[#D1D1D1]'
-                }`}
-              />
-            ))}
-          </div>
-
-          <button 
-            onClick={nextSlide}
-            className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] rounded-full border border-[#D1D1D1] flex items-center justify-center text-[#4A3AFF] hover:bg-[#4A3AFF] hover:text-white transition-all active:scale-95"
-            aria-label="Next project"
-          >
-            <ChevronRight size={24} />
-          </button>
+        <div className="flex justify-center mt-20">
+          <Button
+            text="Bütün Layihelər"
+            path="/services"
+            className="px-10 py-5 text-[16px] font-bold"
+          />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default ProjectSection;

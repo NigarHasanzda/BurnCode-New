@@ -1,71 +1,84 @@
 import React from 'react';
-import { MoveRight } from 'lucide-react';
+import { CalendarDays, MoveRight, Monitor } from 'lucide-react';
 import Link from 'next/link';
-import { Manrope, Poppins } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+import Project from '@/app/projects/Project';
 
-interface ProjectCardProps {
-  title: string;
-  category: string;
-  description: string;
-  tags: string[];
+interface BlogCardProps {
   image: string;
-  isReversed?: boolean; // Şəkildəki kimi 2-ci kartda TRUE göndərəcəksən
+  title: string;
+  description: string;
+  date: string;
+  path: string;
+  category: string;
+  technologies: string[];
 }
 
-
 const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700', '800'],
-    display: 'swap',
-})
-
-
-
-const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['200','300','400','500','600','700','800'],
-  variable: '--font-manrope',
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
 });
 
-const ProjectCard = ({ title, category, description, tags, image, isReversed }: ProjectCardProps) => {
+const ProjectCard = ({ image, title, description, date, path, category, technologies }: BlogCardProps) => {
   return (
-   <div className={`flex flex-col ${isReversed ? 'lg:flex-row' : 'lg:flex-row-reverse'} bg-white rounded-[40px] overflow-hidden border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.02)] transition-all hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)]`}>
-      <div className="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-auto overflow-hidden">
+    <div className={`${poppins.className} bg-white rounded-[17px] md:rounded-[19px] overflow-hidden border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(23,15,73,0.08)] flex flex-col h-full group`}>
+      
+      {/* Image Section */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden">
         <img 
           src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 scale-105"
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-sm border border-white/20">
+          <Monitor size={14} className="text-[#6344F5]" />
+          <span className="text-[#170F49] text-[12px] md:text-[14px] font-medium">{category}</span>
+        </div>
       </div>
 
-      <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center gap-8">
-        <div className=" space-y-4">
-          <span className={`${poppins.className} inline-block bg-[#EAE8FF] text-[#6344F5] px-5 py-2 rounded-full text-[14px] font-semibold tracking-wide`}>
-            {category}
-          </span>
-          <h3 className={`${manrope.className} text-[#1D164D] text-[28px] md:text-[36px] font-extrabold leading-tight`}>
+      {/* Content Section */}
+      <div className="p-5 md:p-8 flex flex-col flex-grow">
+        
+        {/* Title & Description */}
+        <div className="mb-6">
+          <h3 className="text-[#170F49] text-[16px] md:text-[20px] font-semibold leading-[28px] mb-3 group-hover:text-[#6344F5] transition-colors duration-300  ">
             {title}
           </h3>
+          <p className="text-[#596063] text-[16px] md:text-[16px] font-regular leading-[1.6] line-clamp-3 opacity-90">
+            {description}
+          </p>
         </div>
 
-        <p className={`${poppins.className} text-[#596063]  w-full md:w-[70%] text-[13px] md:text-[16px] leading-relaxed opacity-90`}>
-          {description}
-        </p>
+        {/* Footer Area: Technologies & Link */}
+        <div className="mt-auto   flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          
+          {/* Tech Badges List */}
+          <div className="flex flex-wrap gap-2 max-w-full sm:max-w-[60%]">
+            {technologies.slice(0, 2).map((tech, idx) => (
+              <span 
+                key={idx} 
+                className="bg-[#EDEDF6] text-[#6F6C90] px-4 py-2 rounded-[23px] text-[10px] md:text-[13px] font-medium whitespace-nowrap"
+              >
+                {tech}
+              </span>
+            ))}
+            {technologies.length > 2 && (
+              <span className="text-[#6F6C90] text-[13px] self-center">+{technologies.length - 2}</span>
+            )}
+          </div>
 
-        <div className="flex flex-wrap gap-2 mt-2">
-          {tags.map((tag, index) => (
-            <span key={index} className="bg-[#F3F4F6] text-[#596063] px-5 py-2 rounded-full text-[14px] font-medium border border-gray-100">
-              {tag}
-            </span>
-          ))}
+          {/* Action Link */}
+          <Link
+            href={path}
+            className="inline-flex items-center gap-2 text-[#6344F5] font-semibold  text-[14px] group/link transition-all hover:opacity-80"
+          >
+            <span>Ətraflı</span>
+            <div className="p-1.5  transition-all">
+              <MoveRight size={16} className="transition-transform group-hover/link:translate-x-0.5" />
+            </div>
+          </Link>
         </div>
-        <Link 
-          href="#" 
-          className={`${poppins.className} flex items-center gap-2 text-[#6344F5] font-medium text-[18px] group mt-4 transition-all`}
-        >
-          Ətraflı bax 
-          <MoveRight size={20} className="group-hover:translate-x-2 transition-transform" />
-        </Link>
       </div>
     </div>
   );

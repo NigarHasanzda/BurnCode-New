@@ -2,7 +2,7 @@ import EndSection from "@/components/HeroComponents/EndSection";
 import BlogSection from "@/components/Sections/Home/Blog";
 import FaqSection from "@/components/Sections/Home/FAQ";
 import Hero from "@/components/Sections/Home/Hero";
-import LastProjects from "@/components/Sections/Home/LastProjects";
+import ProjectSection from "@/components/Sections/Home/Projects";
 import Projects from "@/components/Sections/Home/Projects";
 import Services from "@/components/Sections/Home/Services";
 import WhyChooseUs from "@/components/Sections/Home/WhyChoose";
@@ -15,8 +15,9 @@ export default function Home() {
       <Hero />
       <WhyChooseUs />
       <Services />
-      <LastProjects />
-      <BlogSection />
+
+      <ProjectSection />
+      <BlogSection/>
       <FaqSection />
       <EndSection
         title="Hələ də sualınız var?"
