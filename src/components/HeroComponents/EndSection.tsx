@@ -1,6 +1,5 @@
 "use client";
 import { Poppins } from 'next/font/google';
-import React from 'react';
 import Link from 'next/link';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
