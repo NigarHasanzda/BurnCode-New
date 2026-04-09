@@ -25,9 +25,9 @@ const HeroComponent = ({
   description
 }: HeroComponentProps) => {
   return (
-    <section className={`${poppins.className} py-18 md:py-28 bg-[#F8F9FB] flex flex-col items-center text-center px-4`}>
+    <section className={`${poppins.className} py-18 md:py-28  flex flex-col items-center text-center px-4`}>
       
-      <div className="inline-flex items-center bg-white gap-2 px-4 py-1.5 md:px-6 md:py-2 border border-[#F1F1F1] rounded-full mb-6 md:mb-10 shadow-sm">
+      <div className="inline-flex items-center bg-[#ffffff4f] gap-2 px-4 py-1.5 md:px-6 md:py-2 border border-[#00000017] rounded-full mb-6 md:mb-10 shadow-[0_2px_20px_rgba(0,0,0,0.05)]">
         <Link href="/" className="text-[#596063] text-[13px] md:text-[16px] hover:text-[#6344F5] transition-colors">
           {breadcrumbParent}
         </Link>

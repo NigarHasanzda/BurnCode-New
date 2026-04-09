@@ -11,65 +11,66 @@ const poppins = Poppins({
   display: 'swap',
 });
 
-const blogData = [
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
-  {
-    image: "/blog1.jpg",
-    title: "NRICH Dashboard",
-    category: "Veb inkişaf",
-    technologies: ["Next.js", "Node.js"],
-    description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-    date: "8 MART 2026",
-    path: "/blog/nrich-dashboard"
-  },
+    const projectdata = [
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
+        {
+            image: "/blog1.jpg",
+            title: "NRICH Dashboard",
+            category: "Veb inkişaf",
+            technologies: ["Next.js", "Node.js"],
+            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
+            date: "8 MART 2026",
+            path: "/projects/nrich-dashboard"
+        },
 
 
-  // Digər datalar da eyni formatda...
-];
+        // Digər datalar da eyni formatda...
+    ];
+
 
 const ProjectSection = () => {
   return (
@@ -81,10 +82,10 @@ const ProjectSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogData.map((blog, index) => (
+          {projectdata.map((project, index) => (
             <ProjectCard
               key={index}
-              {...blog} // Bütün propları birbaşa ötürürük
+              {...project} // Bütün propları birbaşa ötürürük
             />
           ))}
         </div>

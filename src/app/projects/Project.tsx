@@ -25,7 +25,7 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
         {
             image: "/blog1.jpg",
@@ -34,7 +34,7 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
         {
             image: "/blog1.jpg",
@@ -43,7 +43,7 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
         {
             image: "/blog1.jpg",
@@ -52,7 +52,7 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
         {
             image: "/blog1.jpg",
@@ -61,7 +61,7 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
         {
             image: "/blog1.jpg",
@@ -70,39 +70,12 @@ const Project = () => {
             technologies: ["Next.js", "Node.js"],
             description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
             date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
+            path: "/projects/nrich-dashboard"
         },
 
-        {
-            image: "/blog1.jpg",
-            title: "NRICH Dashboard",
-            category: "Veb inkişaf",
-            technologies: ["Next.js", "Node.js"],
-            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-            date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
-        },
-        {
-            image: "/blog1.jpg",
-            title: "NRICH Dashboard",
-            category: "Veb inkişaf",
-            technologies: ["Next.js", "Node.js"],
-            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-            date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
-        },
-        {
-            image: "/blog1.jpg",
-            title: "NRICH Dashboard",
-            category: "Veb inkişaf",
-            technologies: ["Next.js", "Node.js"],
-            description: "Bizneslər üçün idarəetmə dashboard platformasıdır; əməliyyatları, müştəriləri və performansı bir yerdən izləməyə imkan verir.",
-            date: "8 MART 2026",
-            path: "/blog/nrich-dashboard"
-        },
 
+        // Digər datalar da eyni formatda...
     ];
-
 
     const categories = ["Hamısı", "Veb inkişaf", "Mobil tətbiq", "UI/UX Dizayn", "Rəqəmsal Marketinq"];
 
@@ -145,32 +118,32 @@ const Project = () => {
                     <button className="w-12 h-12 flex items-center justify-center rounded-[12px] bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5] transition-all cursor-pointer">
                         <ChevronLeft size={20} />
                     </button>
-                    <button 
+                    <button
                         onClick={() => setCurrentPage(1)}
                         className={`w-12 h-12 flex items-center justify-center rounded-[12px] text-[15px] font-semibold transition-all cursor-pointer
-                        ${currentPage === 1 
-                            ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20" 
-                            : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
+                        ${currentPage === 1
+                                ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20"
+                                : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
                     >
                         1
                     </button>
 
-                    <button 
+                    <button
                         onClick={() => setCurrentPage(2)}
                         className={`w-12 h-12 flex items-center justify-center rounded-[12px] text-[15px] font-semibold transition-all cursor-pointer
-                        ${currentPage === 2 
-                            ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20" 
-                            : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
+                        ${currentPage === 2
+                                ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20"
+                                : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
                     >
                         2
                     </button>
 
-                    <button 
+                    <button
                         onClick={() => setCurrentPage(3)}
                         className={`w-12 h-12 flex items-center justify-center rounded-[12px] text-[15px] font-semibold transition-all cursor-pointer
-                        ${currentPage === 3 
-                            ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20" 
-                            : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
+                        ${currentPage === 3
+                                ? "bg-[#6344F5] text-white shadow-lg shadow-[#6344F5]/20"
+                                : "bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5]"}`}
                     >
                         3
                     </button>

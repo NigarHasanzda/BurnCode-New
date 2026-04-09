@@ -32,7 +32,7 @@ const FaqSection = () => {
 
   return (
     <section className={`${poppins.className} py-24 `}>
-      <div className="max-w-[1530px] mx-auto px-6">
+      <div className="max-w-[1000px] mx-auto px-6">
         
         <div className={`text-center mb-16 ${poppins.className}`}>
           <h2 className="text-[#1D164D] text-[32px] md:text-[48px] font-bold">
