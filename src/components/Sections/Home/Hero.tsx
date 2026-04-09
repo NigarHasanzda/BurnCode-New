@@ -1,8 +1,8 @@
 "use client"
 import React from 'react'
 import { Poppins } from 'next/font/google'
-import { MoveUpRight } from 'lucide-react'
-import Button from '@/components/Button/Button'
+import { motion } from 'framer-motion' // Animasiya üçün
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -11,68 +11,95 @@ const poppins = Poppins({
 })
 
 const Hero = () => {
+    // Animasiya tənzimləmələri
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2 }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: -30 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+    }
+
+    const cardVariants = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.2 } }
+    }
+
     return (
-        // Bütün bölməyə Poppins tətbiq edildi
-        <section className={`${poppins.className}  min-h-[800px] flex items-center py-10 md:py-0`}>
-            <div className='w-[90%] md:w-[80%] mx-auto px-6 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center'>
+        <section className={`${poppins.className} min-h-[800px] flex items-center  md:py-0 overflow-hidden`}>
+            <div className='w-[95%] md:w-[80%] mx-auto px-4 md:px-12 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-6 items-center'>
                 
-                <div className='flex flex-col items-center lg:items-start text-center lg:text-left gap-10 z-10'>
+                {/* SOL TƏRƏF - Animasiyalı */}
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={containerVariants}
+                    className='flex flex-col items-center lg:items-start text-center lg:text-left gap-10 z-10'
+                >
                     <div className='space-y-6'>
-                        <h1 className='text-[40px] md:text-[64px] font-semibold text-[#1D164D] leading-[1.1] tracking-tight'>
+                        <motion.h1 variants={itemVariants} className='text-[35px] md:text-[64px] font-semibold text-[#1D164D] leading-[1.1] tracking-tight'>
                             Biznesinizi virtual <br className='hidden md:block' /> dünyaya daşıyın
-                        </h1>
-                        <p className={`text-[16px] md:text-[18px] text-[#596063] font-regular max-w-[640px] leading-relaxed opacity-80 ${poppins.className}`}>
+                        </motion.h1>
+                        <motion.p variants={itemVariants} className={`text-[14px] md:text-[18px] text-[#596063] font-regular max-w-[640px] leading-relaxed opacity-80`}>
                             Burncode şirkəti artıq 5 ildən çoxdur ki, müştərilərinə xidmət göstərir. 
                             Bu müddət ərzində bir sıra kiçik və böyük layihələr həyata keçirmişik. 
                             Sizə həm keyfiyyətli iş, həm də münasib qiymət təklif edirik.
-                        </p>
+                        </motion.p>
                     </div>
 
-                    {/* Düymələr: Mobildə mərkəzləşdirildi */}
-                    <div className='flex flex-wrap justify-center lg:justify-start gap-4 items-center'>
-                        <Button
-                            text="Bizimlə əlaqə"
-                            path="/contact"
-                            className="px-8 py-4 text-[16px] font-medium"
-                        />
+                    <motion.div variants={itemVariants} className='flex flex-wrap justify-center lg:justify-start gap-4 items-center w-full sm:w-auto'>
                         
-                        <button className='bg-white border border-gray-200 text-[#1D164D] px-8 py-4 rounded-full font-medium text-[16px] hover:bg-gray-50 transition-all active:scale-95'>
+                        <button className='bg-[#6045FD] border border-gray-200 text-white px-8 py-4 rounded-full font-medium text-[12px] md:text-[16px] transition-all active:scale-95'>
+                            Bizimlə əlaqə 
+                            <ArrowOutwardIcon sx={{fontSize:17}} className='ml-2 text-sm' />
+                        </button>
+                        <button className='bg-white border border-gray-200 text-[#1D164D] px-8 py-4 rounded-full font-medium text-[12px] md:text-[16px] hover:bg-gray-50 transition-all active:scale-95'>
                             Xidmətlərə bax
                         </button>
-                    </div>
+                    </motion.div>
 
-                    <div className='w-full h-[1px] bg-gray-100 mt-4'></div>
+                    <motion.div variants={itemVariants} className='w-full h-[1px] bg-gray-100 mt-4'></motion.div>
 
-                    {/* Statistika: Mobildə mərkəz üçün gap nizamlandı */}
-                    <div className='flex flex-wrap justify-center lg:justify-start items-center gap-8 md:gap-16'>
+                    <motion.div variants={itemVariants} className='flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-16'>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>54+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>Tamamlanmış layihə</span>
+                            <span className='text-[28px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>54+</span>
+                            <span className='text-[12px] md:text-[14px] text-[#5A6064] font-regular'>Tamamlanmış layihə</span>
                         </div>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>26+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>Məmnun müştəri</span>
+                            <span className='text-[28px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>26+</span>
+                            <span className='text-[12px] md:text-[14px] text-[#5A6064] font-regular'>Məmnun müştəri</span>
                         </div>
                         <div className='flex flex-col gap-1'>
-                            <span className='text-[32px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>5+</span>
-                            <span className='text-[13px] md:text-[14px] text-[#5A6064] font-regular'>İllik təcrübə</span>
+                            <span className='text-[28px] md:text-[36px] font-semibold text-[#6344F5] leading-none'>5+</span>
+                            <span className='text-[12px] md:text-[14px] text-[#5A6064] font-regular'>İllik təcrübə</span>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                {/* SAĞ TƏRƏF: Vizual Kod Kartı */}
-                <div className='relative flex justify-center lg:justify-end group'>
-                    <div className='absolute -right-4 -top-4 md:-right-8 md:-top-8 w-[120px] h-[110px] md:w-[170px] md:h-[160px] bg-[#6344F5]/10 rounded-[30px] md:rounded-[40px] -z-0'></div>
+                {/* SAĞ TƏRƏF - Kart sağdan gəlir */}
+                <motion.div 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={cardVariants}
+                    className='relative flex justify-center lg:justify-end group w-full'
+                >
+                    <div className='absolute -right-2 -top-2 md:-right-8 md:-top-8 w-[100px] h-[90px] md:w-[170px] md:h-[160px] bg-[#6344F5]/10 rounded-[25px] md:rounded-[40px] -z-0'></div>
                     
-                    <div className='w-full max-w-[660px] min-h-[350px] md:h-[400px] bg-white rounded-[32px] p-8 md:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border border-gray-50 z-10 relative'>
+                    <div className='w-full max-w-[660px] min-h-[350px] md:h-[400px] bg-white rounded-[32px] p-6 md:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-gray-50 z-10 relative'>
                         <div className='flex gap-2 mb-4'>
                             <div className='w-3 h-3 rounded-full bg-[#ff0d00]'></div>
                             <div className='w-3 h-3 rounded-full bg-[#ffb20b]'></div>
                             <div className='w-3 h-3 rounded-full bg-[#08e228]'></div>
                         </div>
 
-                        {/* Kod hissəsi (şrift ölçüsü mobildə bir az kiçildi ki, qırılmasın) */}
-                        <div className='font-mono text-[12px] md:text-[13px] leading-loose text-slate-500 overflow-x-auto'>
+                        <div className='font-mono text-[11px] sm:text-[12px] md:text-[13px] leading-loose text-slate-500 overflow-x-auto'>
                             <p><span className='text-slate-400'>const</span> <span className='text-indigo-600'>DigiTech</span> = &#123;</p>
                             <p className='pl-6'>mission: <span className='text-emerald-500'>"İnnovasiya"</span>,</p>
                             <p className='pl-6'>services: [</p>
@@ -87,7 +114,7 @@ const Hero = () => {
                             <p><span className='text-indigo-600 font-bold'>console</span>.log(<span className='text-emerald-500'>"Gələcəyə hazırıq!"</span>);</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </section>
