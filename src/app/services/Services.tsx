@@ -102,7 +102,7 @@ const ServicesSection = () => {
                 description="İdeyadan reallaşdırmaya qədər bütün mərhələlərdə peşəkar komandamız sizinlədir."
             />
             <section className="py-20 ">
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto ">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <ServiceCard
@@ -120,7 +120,7 @@ const ServicesSection = () => {
             </section>
 
             <section className={`${poppins.className}`}>
-                <div className="max-w-[1550px] mx-auto px-6">
+                <div className="max-w-[1580px] mx-auto px-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {steps.map((step) => (
                             <div

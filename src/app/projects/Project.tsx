@@ -116,7 +116,7 @@ const Project = () => {
                 description="İdeyadan reallaşdırmaya qədər bütün mərhələlərdə peşəkar komandamız sizinlədir."
             />
 
-            <section className='max-w-[1600px] mx-auto px-6 md:px-12'>
+            <section className='max-w-[1600px] mx-auto px-3 md:px-7'>
 
                 <div className='w-full md:w-[70%] mx-auto mb-16 mt-3 flex flex-wrap justify-center items-center gap-3 md:gap-4'>
                     {categories.map((cat, index) => (
@@ -140,14 +140,11 @@ const Project = () => {
                     ))}
                 </div>
 
-                {/* Pagination Bölməsi - Şəkildəki Dizayn */}
+
                 <div className="flex justify-center items-center gap-2 mt-16">
-                    {/* Geri düyməsi */}
                     <button className="w-12 h-12 flex items-center justify-center rounded-[12px] bg-[#F3F4FB] text-[#596063] hover:bg-[#E8E9F5] transition-all cursor-pointer">
                         <ChevronLeft size={20} />
                     </button>
-
-                    {/* Səhifə rəqəmləri */}
                     <button 
                         onClick={() => setCurrentPage(1)}
                         className={`w-12 h-12 flex items-center justify-center rounded-[12px] text-[15px] font-semibold transition-all cursor-pointer

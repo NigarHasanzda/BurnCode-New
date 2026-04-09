@@ -25,7 +25,7 @@ const EndSection = ({
   bgImage = "/faqbg.png" 
 }: EndSectionProps) => {
   return (
-    <div className='max-w-[1530px] mx-auto px-6'>
+    <div className='max-w-[1580px] mx-auto px-6'>
       <div className="relative w-full rounded-[40px] p-10 md:p-20 text-center overflow-hidden group">
         <img 
           src={bgImage} 

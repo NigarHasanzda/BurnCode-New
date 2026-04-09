@@ -22,7 +22,7 @@ const BlogCard = ({ image, title, description, date, path }: BlogCardProps) => {
     <div className={`${poppins.className} bg-white rounded-[18px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.04)] border border-gray-50 flex flex-col h-full group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]`}>
       
       {/* Şəkil Bölməsi */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden">
+      <div className="relative aspect-[16/9] w-full overflow-hidden">
         <img 
           src={image} 
           alt={title}

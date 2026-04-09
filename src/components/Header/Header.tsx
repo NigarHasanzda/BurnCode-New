@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="w-full relative">
-      <div className="max-w-[1440px] mx-auto px-6 py-[32px] flex items-center justify-between">
+      <div className="max-w-[1630px] mx-auto px-6 py-[32px] flex items-center justify-between">
 
 
         <div className="flex-shrink-0">
