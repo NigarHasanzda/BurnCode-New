@@ -1,6 +1,7 @@
 "use client"
-import React, { useState } from 'react'; // useState əlavə edildi
+import React, { useState } from 'react';
 import { Poppins } from 'next/font/google';
+import { motion } from 'framer-motion';
 import FaqItem from '@/components/Cards/FaqItem';
 
 const poppins = Poppins({
@@ -27,34 +28,50 @@ const faqData = [
     answer: "Layihənin mürəkkəbliyindən asılı olaraq müddət dəyişir. Biz hər mərhələdə sizi vaxt barədə məlumatlandırırıq."
   }
 ];
+
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className={`${poppins.className} py-24 `}>
-      <div className="max-w-[1000px] mx-auto px-6">
+    <section className={`${poppins.className} py-16 md:py-24 overflow-hidden`}>
+      <div className="max-w-[1000px] mx-auto px-5 md:px-6">
         
-        <div className={`text-center mb-16 ${poppins.className}`}>
-          <h2 className="text-[#1D164D] text-[32px] md:text-[48px] font-bold">
-            Suallarınız var? <br />
-            <span className="text-[#6344F5]">Cavablar burada</span>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-10 md:mb-16"
+        >
+          {/* Mobildə 28px, planşetdə 36px, desktopda 48px olaraq tənzimləndi */}
+          <h2 className="text-[#1D164D] text-[26px] sm:text-[32px] md:text-[48px] font-bold leading-tight">
+            Suallarınız var? <br  />
+            <span className="text-[#6344F5] md:ml-2">Cavablar burada</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col gap-4 mb-24">
+        <div className="flex flex-col gap-3 md:gap-4 mb-12 md:mb-24">
           {faqData.map((item, index) => (
-            <FaqItem 
-              key={index} 
-              question={item.question} 
-              answer={item.answer}
-              isOpen={openIndex === index} 
-              onClick={() => setOpenIndex(index)} 
-            />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
+            >
+              <FaqItem 
+                question={item.question} 
+                answer={item.answer}
+                isOpen={openIndex === index} 
+                onClick={() => setOpenIndex(index)} 
+              />
+            </motion.div>
           ))}
         </div>
-
-
-
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { Poppins } from 'next/font/google';
+import { motion } from 'framer-motion';
 import BlogCard from '@/components/Cards/BlogCard';
 import Button from '@/components/Button/Button';
 
@@ -65,36 +66,54 @@ const blogData = [
     date: "8 MART 2026",
     path: "/blog/nrich-dashboard"
   },
-  
-  
-  // Digər datalar da eyni formatda...
 ];
 
 const BlogSection = () => {
   return (
-    <section className={`${poppins.className} py-24 bg-[#F8F9FB]`}>
+    <section className={`${poppins.className} py-24 bg-[#F8F9FB] overflow-hidden`}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
         
-        <h2 className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight"
+        >
           Bloq
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {blogData.map((blog, index) => (
-            <BlogCard 
+            <motion.div 
               key={index}
-              {...blog} 
-            />
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ 
+                duration: 0.7, 
+                delay: index % 3 * 0.15, // Grid sətirləri üçün ardıcıl delay
+                ease: [0.16, 1, 0.3, 1] // Custom quintic ease-out
+              }}
+            >
+              <BlogCard {...blog} />
+            </motion.div>
           ))}
         </div>
 
-                <div className="flex justify-center mt-20">
-         <Button
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex justify-center mt-20"
+        >
+          <Button
             text="Bütün bloglar"
-            path="/services"
+            path="/blog"
             className="px-10 py-5 text-[16px] font-bold"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
