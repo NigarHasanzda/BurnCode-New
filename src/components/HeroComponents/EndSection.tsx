@@ -26,7 +26,7 @@ const EndSection = ({
   bgImage = "/faqbg.png" 
 }: EndSectionProps) => {
   return (
-    <div className='max-w-[1560px] mx-auto px-5 md:px-12 py-10'>
+    <div className='max-w-[1620px] mx-auto px-5 md:px-12 py-10'>
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}

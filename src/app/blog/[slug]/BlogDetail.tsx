@@ -83,7 +83,7 @@ export default function SingleBlog() {
 
                                     <p>Veb tətbiqləri geniş spektrli tapşırıq və problemlərə rahat və səmərəli həllər təqdim etməklə bizə müxtəlif yollarla kömək edə bilər...</p>
 
-                                    <blockquote>
+                                    <blockquote className="bg-none">
                                         "Performans artıq sadəcə bir seçim deyil, o, müasir veb tətbiqlərinin təməl sütunudur. 2024-cü ildə sürətli olmayan sayt, mövcud olmayan saytdır."
                                     </blockquote>
 

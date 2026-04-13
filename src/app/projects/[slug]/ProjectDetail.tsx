@@ -1,191 +1,173 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
-import { CheckCircle2, ArrowUpRight } from "lucide-react";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { Poppins } from 'next/font/google';
-import { Search, PenTool, Code2, Rocket } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import DetailHeader from "@/components/HeroComponents/DeatilHeader";
-import CheckIcon from '@mui/icons-material/Check';
+import EndSection from "@/components/HeroComponents/EndSection";
 
 const poppins = Poppins({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
 });
 
-
-const steps = [
-    {
-        id: "01",
-        title: "Analiz",
-        description: "Biznes hədəflərinizi, hədəf kütlənizi və rəqiblərinizi dərindən araşdırırıq.",
-        icon: <Search size={20} />,
-    },
-    {
-        id: "02",
-        title: "Dizayn",
-        description: "Modern UI/UX prinsipləri əsasında saytınızın estetik görünüşünü hazırlayırıq.",
-        icon: <PenTool size={20} />,
-    },
-    {
-        id: "03",
-        title: "İnkişaf",
-        description: "Təsdiq olunmuş dizaynı ən son texnologiyalarla funksional koda çeviririk.",
-        icon: <Code2 size={20} />,
-    },
-    {
-        id: "04",
-        title: "Test & Start",
-        description: "Hər bir detalı sınaqdan keçirib layihəni tam hazır vəziyyətdə təhvil veririk.",
-        icon: <Rocket size={20} />,
-    }
+const trendingPosts = [
+    { id: 1, title: "Lorem ipsum dolor sit amet consectetur. Rhoncus dui interdum amet ac congue.", date: "25 aprel, 2026", readTime: "14:50", image: "/blog1.jpg" },
+    { id: 2, title: "Lorem ipsum dolor sit amet consectetur. Rhoncus dui interdum amet ac congue.", date: "25 aprel, 2026", readTime: "14:50", image: "/blog1.jpg" },
+    { id: 3, title: "Lorem ipsum dolor sit amet consectetur. Rhoncus dui interdum amet ac congue.", date: "25 aprel, 2026", readTime: "14:50", image: "/blog1.jpg" },
+    { id: 4, title: "Lorem ipsum dolor sit amet consectetur. Rhoncus dui interdum amet ac congue.", date: "25 aprel, 2026", readTime: "14:50", image: "/blog1.jpg" },
 ];
 
-
-const mockProject = {
-    name: "Web Proqramlaşdırma",
+const mockBlogDetail = {
+    id: 1,
+    title: "Rəqəmsal Transformasiyada Dashboard-ların Önəmi",
     image: "/blog1.jpg",
-    description: "Veb tətbiqləri geniş spektrli tapşırıq və problemlərə rahat və səmərəli həllər təqdim etməklə bizə müxtəlif yollarla kömək edə bilər. Veb proqramlarının faydalı olacağı bəzi yollar bunlardır:",
-    client_info: "BurnCode Tech",
-    project_link: "https://burncode.org",
-    features: [
-        "WordPress Support & Maintenance",
-        "1,000+ Completed Projects",
-        "Content Migration",
-        "Plugin Installation and Customization",
-        "Fast Load Time",
-        "Easy Back-End Admin Panel"
-    ],
+    date: "8 MART 2026",
     body: `
-        <div class="space-y-8">
-            <section>
-                <h4 class="font-bold text-[#170F49] mb-2">Əlçatanlıq:</h4>
-                <p>Veb proqramları internet bağlantısı olan hər yerdən əldə edilə bilər ki, bu da onları qlobal auditoriya üçün əlçatan edir.</p>
-            </section>
-            <section>
-                <h4 class="font-bold text-[#170F49] mb-2">Rahatlıq:</h4>
-                <p>İstifadəçilər stolüstü kompüterlər, noutbuklar, planşetlər və smartfonlar daxil olmaqla müxtəlif cihazlardan veb proqramlara daxil ola bilərlər.</p>
-            </section>
-             <section>
-                <h4 class="font-bold text-[#170F49] mb-2">Effektiv xərc:</h4>
-                <p>Veb proqramları çox vaxt istifadəçilərin proqram təminatını yerli olaraq quraşdırması və saxlaması ehtiyacını aradan qaldırır.</p>
-            </section>
-        </div>
-    `
+    <p>Müasir biznes dünyasında məlumatların idarə edilməsi uğurun əsas açarıdır. Dashboard-lar mürəkkəb məlumatları vizuallaşdıraraq qərar qəbul etmə prosesini sürətləndirir.</p>
+    <h3>Niyə Next.js və Node.js?</h3>
+    <p>Performans və sürət baxımından bu texnologiyalar yüksək yüklü sistemlər üçün ideal seçimdir. Biz NRICH layihəsində məhz bu stack-dən istifadə edərək maksimal səmərəlilik əldə etdik.</p>
+    <ul>
+      <li>Real-vaxt rejimində monitorinq</li>
+      <li>Fərdiləşdirilmiş hesabatlar</li>
+      <li>Yüksək təhlükəsizlik standartları</li>
+    </ul>
+  `,
+    author: "BurnCode Team"
 };
 
-export default function PortfolioDetails() {
+const mockCategories = [
+    { id: 1, name: "Veb inkişaf", slug: "veb-inkisaf" },
+    { id: 2, name: "Texnologiya", slug: "texnologiya" },
+    { id: 3, name: "UI/UX Dizayn", slug: "ui-ux" }
+];
+
+export default function SingleBlog() {
+
+    const socials = [
+        { name: "facebook", icon: <FacebookIcon />, href: "https://facebook.com" },
+        { name: "instagram", icon: <InstagramIcon />, href: "https://instagram.com" },
+        { name: "linkedin", icon: <LinkedInIcon />, href: "https://linkedin.com" },
+        { name: "twitter", icon: <TwitterIcon />, href: "https://twitter.com" },
+    ];
+
     return (
         <main className={` min-h-screen ${poppins.className}`}>
-            <DetailHeader
-                title="Veb sayt hazırlanması"
-                description="Layihənizi müzakirə etmək və ya suallarınızı cavablandırmaq üçün bizimlə əlaqə saxlayın. 24 saat ərzində cavab veririk."
-                breadcrumbPath={[{ name: 'Ana səhifə', link: '/' }, { name: 'Layihələr', link: '/projects' }, { name: 'Rəqəmsal Transformasiya', link: null }]}
-            />
-            <section className="py-16 md:py-24">
-                <div className="max-w-[1560px] mx-auto px-4">
 
-                    <div className="flex flex-col lg:flex-row gap-12 items-start">
-                        <div className="flex-1">
-                            <div className="rounded-[48px] overflow-hidden shadow-2xl mb-12">
-                                <Image
-                                    src={mockProject.image}
-                                    alt={mockProject.name}
-                                    width={1200}
-                                    height={300}
-                                    className="w-full object-cover"
+            <DetailHeader
+                title="Rəqəmsal Transformasiya"
+                description="Layihənizi müzakirə etmək və ya suallarınızı cavablandırmaq üçün bizimlə əlaqə saxlayın. 24 saat ərzində cavab veririk."
+                breadcrumbPath={[{ name: 'Ana səhifə', link: '/' }, { name: 'Bloq', link: '/blog' }, { name: 'Rəqəmsal Transformasiya', link: null }]}
+            />
+
+
+            <section className="py-16 md:py-24 ">
+                <div className="max-w-[1500px] mx-auto px-4">
+                    <div className="flex flex-col lg:flex-row gap-12">
+
+                        {/* SOL TƏRƏF - Əsas Məzmun */}
+                        <div className="w-full lg:w-[65%]">
+                            <div className="relative mb-12 h-[535px] overflow-hidden rounded-[32px] shadow-lg">
+                                <img
+                                    src={mockBlogDetail.image}
+                                    alt={mockBlogDetail.title}
+                                    className="w-full h-auto object-cover"
                                 />
                             </div>
+                            <article className="mb-16">
+                                <div className="prose prose-lg max-w-none text-[#596063] leading-[1.8]   prose-p:mb-6   prose-strong:text-[#170F49]  [&>blockquote]:border-l-4 [&>blockquote]:border-[#6344F5] [&>blockquote]:bg-white [&>blockquote]:py-4 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#596063] [&>blockquote]:my-8">
 
-                            <div className="max-w-[850px]">
-                                <p className="text-[#6F6C90] text-[18px] leading-relaxed mb-10">
-                                    {mockProject.description}
-                                </p>
+                                    <p>Veb tətbiqləri geniş spektrli tapşırıq və problemlərə rahat və səmərəli həllər təqdim etməklə bizə müxtəlif yollarla kömək edə bilər...</p>
 
-                                <div
-                                    className="prose prose-lg max-w-none text-[#6F6C90]"
-                                    dangerouslySetInnerHTML={{ __html: mockProject.body }}
-                                />
+                                    <blockquote className="bg-none">
+                                        "Performans artıq sadəcə bir seçim deyil, o, müasir veb tətbiqlərinin təməl sütunudur. 2024-cü ildə sürətli olmayan sayt, mövcud olmayan saytdır."
+                                    </blockquote>
+
+                                    <div dangerouslySetInnerHTML={{ __html: mockBlogDetail.body }} />
+                                </div>
+                            </article>
+
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 border-t border-[#EFF0F6]">
+                                <div className="flex flex-wrap gap-2">
+                                    <div className="flex items-center gap-4 text-[#9DA3A6] text-[13px]">
+                                        <span className="flex items-center gap-1"><Calendar size={14} /> 13.10.2004</span>
+                                        <span className="flex items-center gap-1"><Clock size={14} /> 13:56</span>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-[#596063] text-[16px] font-regular">Paylaş:</span>
+                                    <div className="flex gap-2">
+                                        {socials.map((social) => (
+                                            <a key={social.name} href={social.href} className="w-8 h-8 rounded-[80px] bg-[#6045FD] text-[#ffffff] flex items-center justify-center hover:bg-[#6344F5] hover:text-white transition-all shadow-sm">
+                                                {React.cloneElement(social.icon, { fontSize: "inherit", className: "w-5 h-5" })}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        {/* SAĞ TƏRƏF - SİDEBAR (Ən çox oxunanlar) */}
+                        <div className={`w-full rounded-[32px] h-fit bg-white border border-gray-100 p-12 shadow-sm lg:w-[470px] lg:h-[530px] ${poppins.className}`}>
+                            <div className="space-y-6">
 
+                                {/* Müştəri */}
+                                <div className="space-y-1">
+                                    <h4 className="text-[#1D165C] font-medium text-[16px]">Müştəri</h4>
+                                    <p className="text-[#6B7280] text-[18px] font-regular">Allan Flott</p>
+                                    <div className="pt-4 border-b border-gray-100"></div>
+                                </div>
 
+                                {/* Xidmət */}
+                                <div className="space-y-1">
+                                    <h4 className="text-[#1D165C] font-medium text-[16px]">Xidmət</h4>
+                                    <p className="text-[#6B7280] text-[18px] font-regular">Web & Mobile App</p>
+                                    <div className="pt-4 border-b border-gray-100"></div>
+                                </div>
 
-                        <aside className="w-full lg:w-[460px] lg:sticky lg:top-24">
-                            <div className="bg-white border border-[#EFF0F6] p-8 md:p-12 rounded-[40px] shadow-xl shadow-gray-200/50">
-                                <h3 className={`text-[#1E293B] text-[30px] w-[320px]  font-semibold mb-8 ${poppins.className}`}>
-                                    {mockProject.name}
-                                </h3>
-                                <ul className="space-y-3 mb-10">
-                                    {mockProject.features.map((feature, index) => (
-                                        <li key={index} className="flex items-start gap-3 group">
-                                            <div className="mt-2 w-[24px] h-[24px] flex align-center justify-center bg-[#6344F5] rounded-full ">
-                                                <CheckIcon sx={{ fontSize: 16, margin: "auto" }} className="text-white" />
-                                            </div>
-                                            <span className={`text-[#64748B] text-[16px] mt-2 font-regular group-hover:text-[#170F49] transition-colors ${poppins.className}`}>
-                                                {feature}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className="w-[50%] bg-[#6344F5] text-white py-3 rounded-full font-medium text-[14px] flex items-center justify-center gap-2 hover:bg-[#4F35C8] transition-all shadow-lg shadow-[#6344F5]/30 group">
-                                    Bizimlə Əlaqə
-                                    <ArrowUpRight size={18} className="group-hover:translate-x-1 font-medium  group-hover:-translate-y-1 transition-transform" />
-                                </button>
+                                {/* Texnologiyalar */}
+                                <div className="space-y-1">
+                                    <h4 className="text-[#1D165C] font-medium text-[16px]">Texnologiyalar</h4>
+                                    <p className="text-[#6B7280] text-[18px] font-regular">React, Node.js, Figma</p>
+                                    <div className="pt-4 border-b border-gray-100"></div>
+                                </div>
+
+                                {/* Tarix */}
+                                <div className="space-y-1">
+                                    <h4 className="text-[#1D165C] font-medium text-[16px]">Tarix</h4>
+                                    <p className="text-[#6B7280] text-[18px] font-regular">5 Aprel, 2026</p>
+                                </div>
+
+                                {/* Düymə */}
+                                <div className="pt-4">
+                                    <button className="flex items-center justify-center gap-2 bg-[#6344F5] text-white px-6 py-3 rounded-full text-[14px] font-medium transition-all hover:bg-[#4f35c9] hover:shadow-lg w-fit">
+                                        Veb sayta keçid
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+
                             </div>
-                        </aside>
+                        </div>
 
                     </div>
                 </div>
             </section>
 
-            {/* <section className={`py-[80px] overflow-hidden ${poppins.className}`}>
-                <div className="max-w-[900px] mx-auto px-[15px]">
 
-                    <div className="text-center mb-[60px]">
-                        <h2 className="text-[#170F49] text-[48px] font-bold mb-[12px] leading-[1.2]">
-                            İş Prosesimiz
-                        </h2>
-                        <p className="text-[#6F6C90] text-[18px] leading-[1.6]">
-                            Layihənizi konseptdən reallığa necə çeviririk?
-                        </p>
-                    </div>
-                    <div className="relative">
-                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1.5px] bg-[#EFF0F6] z-0 hidden lg:block"></div>
-
-                        <div className="space-y-[40px] lg:space-y-0">
-                            {steps.map((step, index) => (
-                                <div
-                                    key={step.id}
-                                    className={`relative flex items-center justify-between w-full lg:mb-[60px] last:mb-0 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
-                                        }`}
-                                >
-                                    <div className="hidden lg:block w-[50%]"></div>
-
-                                    <div className="absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 z-10">
-                                        <div className="w-[48px] h-[48px] bg-[#6344F5] text-white rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(99,68,245,0.3)] border-[4px] border-white">
-                                            {React.cloneElement(step.icon, { size: 20 })}
-                                        </div>
-                                    </div>
-
-                                    <div className={`w-full lg:w-[50%] flex ${index % 2 === 0 ? 'lg:justify-start lg:pr-[40px]' : 'lg:justify-end lg:pl-[40px]'
-                                        } pl-[60px] lg:pl-0`}>
-                                        <div className="bg-white p-[20px] md:p-[24px] w-full max-w-[370px] h-[160px] rounded-[30px] shadow-[0_4px_30px_rgba(0,0,0,0.04)] border border-[#F8F9FB] transition-all duration-300 hover:shadow-lg flex flex-col justify-center overflow-hidden">
-                                            <span className="text-[#6344F5] font-bold text-[18px] mb-[8px] block">
-                                                {step.id}. {step.title}
-                                            </span>
-                                            <p className="text-[#6F6C90] text-[14px] md:text-[15px] leading-[1.5] line-clamp-3">
-                                                {step.description}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section> */}
+            <section className='pt-30 px-42 '>
+                <EndSection
+                    title="Layihənizi müzakirə edək?"
+                    description="Pulsuz məsləhət üçün bizimlə əlaqə saxlayın. Ehtiyaclarınızı dinləyək və sizə ən uyğun həlli təklif edək."
+                    buttonText="Bizimlə Əlaqə"
+                    path="/contact"
+                />
+            </section>
         </main>
     );
 }

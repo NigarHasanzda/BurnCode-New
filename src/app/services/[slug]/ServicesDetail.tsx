@@ -3,6 +3,7 @@ import React from 'react'
 import DetailHeader from '@/components/HeroComponents/DeatilHeader';
 import { useParams } from 'next/navigation';
 import { Poppins } from 'next/font/google';
+import EndSection from '@/components/HeroComponents/EndSection';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -112,7 +113,7 @@ const ServicesDetail = () => {
             />
             <div className="max-w-[1550px] mx-auto px-4 py-12 pt-20">
 
-                <div className="rounded-xl overflow-hidden shadow-lg mb-10">
+                <div className="rounded-4xl overflow-hidden shadow-lg mb-10">
                     <img
                         src={selectedService.image}
                         alt={selectedService.title}
@@ -136,6 +137,13 @@ const ServicesDetail = () => {
                     dangerouslySetInnerHTML={{ __html: selectedService.body }}
                 />
             </div>
+
+            <EndSection
+                title="Layihənizi müzakirə edək?"
+                description="Pulsuz məsləhət üçün bizimlə əlaqə saxlayın. Ehtiyaclarınızı dinləyək və sizə ən uyğun həlli təklif edək."
+                buttonText="Bizimlə Əlaqə"
+                path="/contact"
+            />
         </>
     )
 }
