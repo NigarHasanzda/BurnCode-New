@@ -1,15 +1,17 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Poppins } from 'next/font/google';
 import { motion } from 'framer-motion';
 import BlogCard from '@/components/Cards/BlogCard';
 import Button from '@/components/Button/Button';
+import { getBlogPosts } from '@/services/Blog';
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
+
 
 const blogData = [
   {
@@ -39,7 +41,7 @@ const blogData = [
     date: "8 MART 2026",
     path: "/blog/nrich-dashboard"
   },
-    {
+  {
     image: "/blog1.jpg",
     title: "NRICH Dashboard",
     category: "Veb inkişaf",
@@ -69,6 +71,19 @@ const blogData = [
 ];
 
 const BlogSection = () => {
+
+  useEffect(() => {
+     const fetchData = async () => {
+       try {
+         const data = await getBlogPosts(1, "en");
+         console.log("BLOG DATA:", data.data);
+       } catch (error) {
+         console.error("ERROR:", error);
+       }
+     };
+  
+     fetchData();
+   }, []);
   return (
     <section className={`${poppins.className} py-24 bg-[#F8F9FB] overflow-hidden`}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
@@ -79,7 +94,7 @@ const BlogSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight"
-        >
+          >
           Bloq
         </motion.h2>
 

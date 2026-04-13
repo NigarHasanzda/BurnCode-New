@@ -25,7 +25,7 @@ const trendingPosts = [
 const mockBlogDetail = {
     id: 1,
     title: "Rəqəmsal Transformasiyada Dashboard-ların Önəmi",
-    image: "/blog1.jpg", // Öz şəkil yolunu bura qoy
+    image: "/blog1.jpg", 
     date: "8 MART 2026",
     body: `
     <p>Müasir biznes dünyasında məlumatların idarə edilməsi uğurun əsas açarıdır. Dashboard-lar mürəkkəb məlumatları vizuallaşdıraraq qərar qəbul etmə prosesini sürətləndirir.</p>
@@ -48,7 +48,6 @@ const mockCategories = [
 
 export default function SingleBlog() {
 
-    // Sosial media linkləri üçün mock data
     const socials = [
         { name: "facebook", icon: <FacebookIcon />, href: "https://facebook.com" },
         { name: "instagram", icon: <InstagramIcon />, href: "https://instagram.com" },
@@ -57,7 +56,7 @@ export default function SingleBlog() {
     ];
 
     return (
-        <main className={`bg-white min-h-screen ${poppins.className}`}>
+        <main className={` min-h-screen ${poppins.className}`}>
 
             <DetailHeader
                 title="Rəqəmsal Transformasiya"
@@ -66,13 +65,12 @@ export default function SingleBlog() {
             />
 
 
-            <section className="py-16 md:py-24 bg-white">
+            <section className="py-16 md:py-24 ">
                 <div className="max-w-[1400px] mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-12">
 
                         {/* SOL TƏRƏF - Əsas Məzmun */}
                         <div className="w-full lg:w-[65%]">
-                            {/* Əsas Şəkil */}
                             <div className="relative mb-12 overflow-hidden rounded-[32px] shadow-lg">
                                 <img
                                     src={mockBlogDetail.image}
@@ -80,8 +78,6 @@ export default function SingleBlog() {
                                     className="w-full h-auto object-cover"
                                 />
                             </div>
-
-                            {/* Məqalə Mətni */}
                             <article className="mb-16">
                                 <div className="prose prose-lg max-w-none text-[#596063] leading-[1.8]   prose-p:mb-6   prose-strong:text-[#170F49]  [&>blockquote]:border-l-4 [&>blockquote]:border-[#6344F5] [&>blockquote]:bg-white [&>blockquote]:py-4 [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[#596063] [&>blockquote]:my-8">
 
@@ -95,7 +91,6 @@ export default function SingleBlog() {
                                 </div>
                             </article>
 
-                            {/* Kateqoriyalar və Paylaşım (Sənin verdiyin hissə) */}
                             <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-10 border-t border-[#EFF0F6]">
                                 <div className="flex flex-wrap gap-2">
                                     <div className="flex items-center gap-4 text-[#9DA3A6] text-[13px]">
@@ -104,10 +99,10 @@ export default function SingleBlog() {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <span className="text-[#170F49] font-semibold">Paylaş:</span>
+                                    <span className="text-[#596063] text-[16px] font-regular">Paylaş:</span>
                                     <div className="flex gap-2">
                                         {socials.map((social) => (
-                                            <a key={social.name} href={social.href} className="w-10 h-10 rounded-xl bg-[#F3F4FB] text-[#6344F5] flex items-center justify-center hover:bg-[#6344F5] hover:text-white transition-all shadow-sm">
+                                            <a key={social.name} href={social.href} className="w-8 h-8 rounded-[80px] bg-[#6045FD] text-[#ffffff] flex items-center justify-center hover:bg-[#6344F5] hover:text-white transition-all shadow-sm">
                                                 {React.cloneElement(social.icon, { fontSize: "inherit", className: "w-5 h-5" })}
                                             </a>
                                         ))}
@@ -117,24 +112,24 @@ export default function SingleBlog() {
                         </div>
 
                         {/* SAĞ TƏRƏF - SİDEBAR (Ən çox oxunanlar) */}
-                        <div className="w-full lg:w-[35%]">
+                        <div className={`w-full lg:w-[30%] ${poppins.className} `}>
                             <div className="sticky top-24">
                                 <div className="flex items-center gap-3 mb-8">
                                     <div className="w-8 h-[2px] bg-[#6344F5]"></div>
-                                    <h3 className="text-[#170F49] font-bold text-[18px] uppercase tracking-wider">Ən çox oxunanlar</h3>
+                                    <h3 className={`${poppins.className} text-[#170F49] font-medium text-[20px] uppercase tracking-wider`}>Ən çox oxunanlar</h3>
                                 </div>
 
-                                <div className="space-y-8">
+                                <div className="space-y-8 p-4 rounded-3xl bg-[#FFFFFF] ">
                                     {trendingPosts.map((post) => (
                                         <div key={post.id} className="flex gap-4 group cursor-pointer">
                                             <div className="w-24 h-20 flex-shrink-0 overflow-hidden rounded-xl">
                                                 <img src={post.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                             </div>
                                             <div className="flex flex-col justify-between">
-                                                <h4 className="text-[#170F49] font-medium text-[15px] line-clamp-2 group-hover:text-[#6344F5] transition-colors">
+                                                <h4 className="text-[#170F49] font-regular text-[14px] line-clamp-2 group-hover:text-[#6344F5] transition-colors">
                                                     {post.title}
                                                 </h4>
-                                                <div className="flex items-center gap-4 text-[#9DA3A6] text-[13px]">
+                                                <div className="flex items-center gap-4 text-[#9DA3A6] text-[12px] font-regular">
                                                     <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
                                                     <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
                                                 </div>

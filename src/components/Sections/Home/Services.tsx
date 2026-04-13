@@ -104,7 +104,7 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ 
                 duration: 0.5, 
-                delay: index * 0.1, 
+                delay: index * 0.1, // Hər kart üçün dinamik delay (stagger effekti)
                 ease: "easeOut"
               }}
             >

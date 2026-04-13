@@ -57,7 +57,7 @@ const ServiceCard = ({ title, description, icon, features, technologies, path }:
 
       {path && (
         <Link 
-          href={path} 
+          href={`services/${path}`} 
           className="mt-2 flex items-center gap-2 text-[#6344F5] font-medium text-[16px] hover:underline group/link"
         >
           Ətraflı bax

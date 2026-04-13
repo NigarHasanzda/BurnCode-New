@@ -41,7 +41,7 @@ const steps = [
     }
 ];
 
-// ✅ Statik Mock Data (Dizaynı görmək üçün)
+
 const mockProject = {
     name: "Web Proqramlaşdırma",
     image: "/blog1.jpg",
@@ -82,8 +82,6 @@ export default function PortfolioDetails() {
                 description="Layihənizi müzakirə etmək və ya suallarınızı cavablandırmaq üçün bizimlə əlaqə saxlayın. 24 saat ərzində cavab veririk."
                 breadcrumbPath={[{ name: 'Ana səhifə', link: '/' }, { name: 'Layihələr', link: '/projects' }, { name: 'Rəqəmsal Transformasiya', link: null }]}
             />
-
-            {/* 2. MAIN SECTION */}
             <section className="py-16 md:py-24">
                 <div className="max-w-[1560px] mx-auto px-4">
 
@@ -110,6 +108,7 @@ export default function PortfolioDetails() {
                                 />
                             </div>
                         </div>
+
 
 
 
@@ -141,10 +140,9 @@ export default function PortfolioDetails() {
                 </div>
             </section>
 
-            <section className={`py-[80px] overflow-hidden ${poppins.className}`}>
+            {/* <section className={`py-[80px] overflow-hidden ${poppins.className}`}>
                 <div className="max-w-[900px] mx-auto px-[15px]">
 
-                    {/* Başlıq hissəsi */}
                     <div className="text-center mb-[60px]">
                         <h2 className="text-[#170F49] text-[48px] font-bold mb-[12px] leading-[1.2]">
                             İş Prosesimiz
@@ -153,11 +151,7 @@ export default function PortfolioDetails() {
                             Layihənizi konseptdən reallığa necə çeviririk?
                         </p>
                     </div>
-
-                    {/* Timeline Container */}
                     <div className="relative">
-
-                        {/* Mərkəzi Xətt */}
                         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1.5px] bg-[#EFF0F6] z-0 hidden lg:block"></div>
 
                         <div className="space-y-[40px] lg:space-y-0">
@@ -167,17 +161,14 @@ export default function PortfolioDetails() {
                                     className={`relative flex items-center justify-between w-full lg:mb-[60px] last:mb-0 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
                                         }`}
                                 >
-                                    {/* Boş tərəf - Balans üçün */}
                                     <div className="hidden lg:block w-[50%]"></div>
 
-                                    {/* Mərkəzi İkon */}
                                     <div className="absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 z-10">
                                         <div className="w-[48px] h-[48px] bg-[#6344F5] text-white rounded-full flex items-center justify-center shadow-[0_8px_20px_rgba(99,68,245,0.3)] border-[4px] border-white">
                                             {React.cloneElement(step.icon, { size: 20 })}
                                         </div>
                                     </div>
 
-                                    {/* Kart Hissəsi - Sabit ölçülər tətbiq edildi */}
                                     <div className={`w-full lg:w-[50%] flex ${index % 2 === 0 ? 'lg:justify-start lg:pr-[40px]' : 'lg:justify-end lg:pl-[40px]'
                                         } pl-[60px] lg:pl-0`}>
                                         <div className="bg-white p-[20px] md:p-[24px] w-full max-w-[370px] h-[160px] rounded-[30px] shadow-[0_4px_30px_rgba(0,0,0,0.04)] border border-[#F8F9FB] transition-all duration-300 hover:shadow-lg flex flex-col justify-center overflow-hidden">
@@ -194,7 +185,7 @@ export default function PortfolioDetails() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </main>
     );
 }

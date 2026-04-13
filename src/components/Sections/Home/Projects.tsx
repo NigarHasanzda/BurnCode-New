@@ -112,7 +112,7 @@ const ProjectSection = () => {
         >
           <Button
             text="Bütün Layihelər"
-            path="/services"
+            path="/projects"
             className="px-10 py-5 text-[16px] font-bold"
           />
         </motion.div>
