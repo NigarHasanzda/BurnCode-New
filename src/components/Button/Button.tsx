@@ -12,19 +12,21 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
+
 const Button = ({ text = "  ", path, className = "", onClick }: ButtonProps) => {
 
   const stableText = useRef(text);
 
+  // w-full (mobildə 100%), sm:w-fit (tabletdən etibarən mətndən asılı ölçü)
   const buttonStyles = `inline-flex items-center justify-center gap-2 px-8 py-4 
+  w-full sm:w-fit
   bg-[#6045FD] ${poppins.className}
-  text-white rounded-full font-medium text-[15px]  transition-all 
+  text-white rounded-full font-medium md:text-[15px] transition-all 
   active:scale-95 hover:brightness-110 ${className}`;
 
   const Icon = <ArrowOutwardIcon sx={{ fontSize: 20 }} />;

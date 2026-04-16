@@ -33,7 +33,7 @@ const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
   return (
-    <section className={`${poppins.className} py-16 md:py-24 overflow-hidden`}>
+    <section className={`${poppins.className} py-1 md:py-10 overflow-hidden`}>
       <div className="max-w-[1000px] mx-auto px-5 md:px-6">
         
         <motion.div 
@@ -44,7 +44,7 @@ const FaqSection = () => {
           className="text-center mb-10 md:mb-16"
         >
           {/* Mobildə 28px, planşetdə 36px, desktopda 48px olaraq tənzimləndi */}
-          <h2 className="text-[#1D164D] text-[26px] sm:text-[32px] md:text-[48px] font-bold leading-tight">
+          <h2 className="text-[#1D164D] text-[28px] sm:text-[32px] md:text-[48px] font-semibold leading-tight">
             Suallarınız var? <br  />
             <span className="text-[#6344F5] md:ml-2">Cavablar burada</span>
           </h2>

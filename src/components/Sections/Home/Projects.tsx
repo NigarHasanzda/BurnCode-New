@@ -71,7 +71,7 @@ const projectdata = [
 
 const ProjectSection = () => {
   return (
-    <section className={`${poppins.className} py-18 bg-[#F8F9FB] overflow-hidden`}>
+    <section className={`${poppins.className} py-1 md:py-18 bg-[#F8F9FB] overflow-hidden`}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
 
         <motion.h2 
@@ -79,7 +79,7 @@ const ProjectSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight"
+          className="text-[#1D164D] text-[28px] md:text-[48px] font-semibold text-center mb-16 tracking-tight"
         >
           Son Layihələrimiz
         </motion.h2>

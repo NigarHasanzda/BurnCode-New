@@ -20,13 +20,13 @@ const poppins = Poppins({
 const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
   return (
     <div className={`transition-all duration-300 rounded-[16px] md:rounded-[20px] overflow-hidden ${
-      isOpen ? 'bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]' : 'bg-[#F9F9FF]'
+      isOpen ? 'bg-white shadow-[0_10px_30px_rgba(0,0,0,0.05)]' : 'bg-[#f2f2ff]'
     }`}>
       <button 
         onClick={onClick}
         className="w-full px-5 py-5 md:px-8 md:py-6 flex items-center justify-between text-left gap-4"
       >
-        <span className={`text-[#1D164D] text-[16px] sm:text-[18px] md:text-[20px] font-medium leading-snug ${poppins.className}`}>
+        <span className={`text-[#170F49] text-[15px] sm:text-[18px] md:text-[20px] font-medium  ${poppins.className}`}>
           {question}
         </span>
         <div className={`shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white flex items-center justify-center transition-transform duration-300 shadow-sm ${
@@ -44,7 +44,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <div className={`px-5 pb-5 md:px-8 md:pb-8 pt-0 text-[#596063] text-[14px] md:text-[15px] leading-relaxed ${poppins.className}`}>
+            <div className={`px-5 pb-5 md:px-8 md:pb-8 pt-0 text-[#596063] font-[400] text-[14px] md:text-[15px] leading-[26px] ${poppins.className}`}>
               {answer}
             </div>
           </motion.div>

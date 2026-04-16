@@ -85,7 +85,7 @@ const BlogSection = () => {
      fetchData();
    }, []);
   return (
-    <section className={`${poppins.className} py-24 bg-[#F8F9FB] overflow-hidden`}>
+    <section className={`${poppins.className} py-15 md:py-24 bg-[#F8F9FB] overflow-hidden`}>
       <div className="max-w-[1530px] mx-auto px-6 md:px-12">
         
         <motion.h2 
@@ -93,7 +93,7 @@ const BlogSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-[#1D164D] text-[35px] md:text-[48px] font-bold text-center mb-16 tracking-tight"
+          className="text-[#1D164D] text-[35px] md:text-[48px] font-semibold text-center mb-16 tracking-tight"
           >
           Bloq
         </motion.h2>

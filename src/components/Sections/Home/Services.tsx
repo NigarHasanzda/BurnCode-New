@@ -16,7 +16,6 @@ const servicesData = [
     title: "Veb Sayt Hazırlanması",
     description: "Müasir CEO dostu veb saytlar. Korporativ saytlar, e-ticarət platformaları.",
     features: ["Responsiv dizayn", "CEO optimallaşdırma", "CMS İnteqrasiya"],
-    technologies: ["PostgreSQL", "Node.js", "Next.js"],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -27,8 +26,7 @@ const servicesData = [
     title: "Mobil Tətbiqlər",
     description: "iOS və Android platformaları üçün yüksək performanslı mobil tətbiqlər hazırlayırıq.",
     features: ["iOS & Android", "Cross-platform", "UI/UX Dizayn"],
-    technologies: ["React Native", "Flutter", "Swift"],
-    icon: (
+ icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
       </svg>
@@ -90,7 +88,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-[#1D164D] text-[32px] md:text-[56px] font-bold text-center mb-12 md:mb-20 tracking-tight"
+          className="text-[#1D164D] text-[28px] md:text-[56px] font-semibold text-center mb-12 md:mb-20 tracking-tight"
         >
           Xidmətlərimiz
         </motion.h2>
@@ -104,15 +102,14 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ 
                 duration: 0.5, 
-                delay: index * 0.1, // Hər kart üçün dinamik delay (stagger effekti)
+                delay: index * 0.1,
                 ease: "easeOut"
               }}
             >
-              <ServiceCard 
+              <ServiceCard
                 title={service.title}
                 description={service.description}
                 features={service.features}
-                technologies={service.technologies}
                 icon={service.icon}
               />
             </motion.div>

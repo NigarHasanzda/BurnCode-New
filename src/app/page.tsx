@@ -17,15 +17,16 @@ export default function Home() {
       <Services />
 
       <ProjectSection />
-      <BlogSection/>
+      <BlogSection />
       <FaqSection />
-      <EndSection
-        title="Hələ də sualınız var?"
-        description="Əgər axtardığınızı tapa bilmədinizsə, dəstək komandamız 24/7 sizə kömək etməyə hazırdır. Bizimlə əlaqə saxlamaqdan çəkinməyin!"
-        buttonText="Bizimlə Əlaqə"
-        path="/contact"
-    />
-      {/* <Projects/> */}
+      <div className="md:px-48">
+        <EndSection
+          title="Hələ də sualınız var?"
+          description="Əgər axtardığınızı tapa bilmədinizsə, dəstək komandamız 24/7 sizə kömək etməyə hazırdır. Bizimlə əlaqə saxlamaqdan çəkinməyin!"
+          buttonText="Bizimlə Əlaqə"
+          path="/contact"
+        />
+      </div>
     </section>
   );
 }

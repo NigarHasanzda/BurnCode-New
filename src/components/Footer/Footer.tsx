@@ -75,16 +75,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Alt Hissə - Copyright */}
-                <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-[#6F6C90] text-[14px]">
-                        © {currentYear} Burncode. Bütün hüquqlar qorunur.
-                    </p>
-                    <div className="flex gap-8">
-                        <Link href="#" className="text-[#6F6C90] text-[14px] hover:text-[#6344F5]">Məxfilik Siyasəti</Link>
-                        <Link href="#" className="text-[#6F6C90] text-[14px] hover:text-[#6344F5]">İstifadə Şərtləri</Link>
-                    </div>
-                </div>
             </div>
         </footer>
     );
