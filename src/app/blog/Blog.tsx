@@ -185,7 +185,7 @@ const Blog = () => {
 
             {/* End Section */}
             <section className='pt-16 md:pt-30'>
-                <div className="max-w-[1560px] mx-auto px-4 md:px-0">
+                <div className="max-w-[1560px] mx-auto  md:px-0">
                     <EndSection
                         title="Layihənizi müzakirə edək?"
                         description="Pulsuz məsləhət üçün bizimlə əlaqə saxlayın. Ehtiyaclarınızı dinləyək və sizə ən uyğun həlli təklif edək."

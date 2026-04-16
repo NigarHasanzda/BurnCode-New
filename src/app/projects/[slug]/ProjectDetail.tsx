@@ -6,7 +6,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Poppins } from 'next/font/google';
-import { Calendar, Clock } from 'lucide-react';
 import DetailHeader from "@/components/HeroComponents/DeatilHeader";
 import EndSection from "@/components/HeroComponents/EndSection";
 
@@ -42,13 +41,6 @@ const mockBlogDetail = {
 };
 
 export default function SingleBlog() {
-    const socials = [
-        { name: "facebook", icon: <FacebookIcon />, href: "#" },
-        { name: "instagram", icon: <InstagramIcon />, href: "#" },
-        { name: "linkedin", icon: <LinkedInIcon />, href: "#" },
-        { name: "twitter", icon: <TwitterIcon />, href: "#" },
-    ];
-
     return (
         <main className={`min-h-screen overflow-x-hidden ${poppins.className}`}>
             <DetailHeader
@@ -63,36 +55,23 @@ export default function SingleBlog() {
 
             <section className="py-8 md:py-20">
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
-                    <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 items-start">
+                    {/* Ana konteyner flex-col (mobildə) və lg:flex-row (desktopda) */}
+                    <div className="flex flex-col lg:flex-row gap-10 items-start">
                         
-                        {/* SOL TƏRƏF (Məzmun) */}
-                        <div className="flex-1 w-full order-1">
-                            {/* Ana Şəkil */}
-                            <div className="relative mb-8 md:mb-12 overflow-hidden rounded-2xl md:rounded-[32px] shadow-sm aspect-video sm:aspect-[16/9] lg:max-h-[535px]">
+                        {/* 1. ŞƏKİL - Mobildə ən yuxarıda (order-1) */}
+                        <div className="w-full lg:flex-1 order-1">
+                            <div className="relative overflow-hidden rounded-2xl md:rounded-[32px] shadow-sm aspect-video sm:aspect-[16/9] lg:max-h-[535px]">
                                 <img
                                     src={mockBlogDetail.image}
                                     alt={mockBlogDetail.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
-
-                            {/* Məqalə Body */}
-                            <article className="mb-12">
-                                <div className={`
-                                    /* Mobildə fontları bir az kiçildir, desktopda (md) 20px və 18px edir */
-                                    [&_h3]:text-[18px] md:[&_h3]:text-[20px] 
-                                    [&_p]:text-[15px] md:[&_p]:text-[18px]
-                                    [&_li]:text-[15px] md:[&_li]:text-[18px]
-                                `}>
-                                    <div dangerouslySetInnerHTML={{ __html: mockBlogDetail.body }} />
-                                </div>
-                            </article>
-
                         </div>
 
-                        {/* SAĞ TƏRƏF (Sidebar) */}
-                        <aside className="w-full lg:w-[380px] xl:w-[420px] order-2 lg:order-2">
-                              <div className="sticky top-8 bg-white border border-[#EFF0F6] rounded-[24px] md:rounded-[32px] p-6 md:p-12 shadow-sm">
+                        {/* 2. SİDEBAR KARTI - Mobildə şəklin altında (order-2), Desktopda sağda duracaq */}
+                        <aside className="w-full lg:w-[380px] xl:w-[420px] order-2 lg:order-last">
+                            <div className="lg:sticky lg:top-8 bg-white border border-[#EFF0F6] rounded-[24px] md:rounded-[32px] p-6 md:p-12 shadow-sm">
                                 <div className="space-y-5"> 
                                     <div className="space-y-1 pb-4 border-b border-[#EFF0F6]">
                                         <h4 className="text-[#1D165C] font-medium text-[13px] md:text-[16px] uppercase tracking-wider opacity-80">Müştəri</h4>
@@ -111,22 +90,41 @@ export default function SingleBlog() {
                                         <p className="text-[#6B7280] text-[15px] md:text-[18px]">5 Aprel, 2026</p>
                                     </div>
                                     <div className="pt-3">
-                                        <button className="w-full flex items-center justify-center gap-2 bg-[#6344F5] text-white px-6 py-3.5 rounded-full text-sm font-medium transition-all hover:bg-[#4f35c9] active:scale-[0.98]">
+                                        <button className="w-full bg-[#6344F5] text-white py-3.5 rounded-full text-sm font-medium hover:bg-[#4f35c9] transition-all">
                                             Veb sayta keçid
-                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </aside>
 
+                        {/* 3. MƏTN (BODY) - Mobildə kartın altında (order-3), Desktopda isə şəklin altına keçməsi üçün */}
+                        {/* Desktop üçün xüsusi tənzimləmə: lg:absolute və ya grid istifadə etmək olar, 
+                            amma ən təmiz yol bu div-i lg:flex-1 içində şəkillə birgə saxlamaqdır.
+                            Aşağıdakı həll həm mobil ardıcıllığı, həm desktop görünüşünü təmin edir. */}
+                        
+                        <div className="w-full lg:hidden order-3">
+                             <article className="mb-12">
+                                <div className="[&_h3]:text-[18px] [&_p]:text-[15px] [&_li]:text-[15px]">
+                                    <div dangerouslySetInnerHTML={{ __html: mockBlogDetail.body }} />
+                                </div>
+                            </article>
+                        </div>
+
+                    </div>
+
+                    {/* Desktop Body (Şəklin altında qalması üçün yalnız lg-də görünür) */}
+                    <div className="hidden lg:block w-full lg:max-w-[calc(100%-420px-2.5rem)]">
+                        <article className="mt-12 mb-12">
+                            <div className="[&_h3]:text-[20px] [&_p]:text-[18px] [&_li]:text-[18px]">
+                                <div dangerouslySetInnerHTML={{ __html: mockBlogDetail.body }} />
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
 
-            <section className=' md:pb-15  '>
+            <section className='md:pb-15'>
                 <div className="max-w-[1480px] mx-auto">
                     <EndSection
                         title="Layihənizi müzakirə edək?"
