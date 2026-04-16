@@ -47,7 +47,7 @@ const Header = () => {
         </button>
       </div>
       <div className={`
-        lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-100 transition-all duration-300 ease-in-out shadow-lg
+        lg:hidden absolute top-full left-0 w-full bg-[#FBFCFF] border-t rounded-b-[20px] border-gray-100 transition-all duration-300 ease-in-out shadow-lg
         ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}
       `}>
         <div className="flex flex-col p-6 gap-4">
